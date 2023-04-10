@@ -1,53 +1,21 @@
 from turtle import Turtle, Screen
+import random
+
+tim = Turtle()
+colors = ['cornflower blue', 'cyan', 'medium spring green', 'green', 'green yellow', 'yellow green', 'gold', 'tan',
+          'saddle brown', 'orange red']
 
 
-triangle = Turtle()
-for _ in range(3):
-    triangle.forward(100)
-    triangle.right(120)
+def draw_shape(num_side: int):
+    angle = 360 / num_side
+    for _ in range(num_side):
+        tim.forward(100)
+        tim.right(angle)
 
-square = Turtle()
-square.color('blue')
-for _ in range(4):
-    square.forward(100)
-    square.right(90)
 
-pentagon = Turtle()
-pentagon.color('red')
-for _ in range(5):
-    pentagon.forward(100)
-    pentagon.right(72)
-
-hexagon = Turtle()
-hexagon.color('green')
-for _ in range(6):
-    hexagon.forward(100)
-    hexagon.right(60)
-
-heptagon = Turtle()
-heptagon.color('aquamarine3')
-for _ in range(7):
-    heptagon.forward(100)
-    heptagon.right((360/7))
-
-octagon = Turtle()
-octagon.color('bisque3')
-for _ in range(8):
-    octagon.forward(100)
-    octagon.right((360/8))
-
-nonagon = Turtle()
-nonagon.color('brown3')
-for _ in range(9):
-    nonagon.forward(100)
-    nonagon.right((360/9))
-
-decagon = Turtle()
-decagon.color('CadetBlue3')
-for _ in range(10):
-    decagon.forward(100)
-    decagon.right((360/10))
-
+for i in range(3, 11):
+    tim.color(random.choice(colors))
+    draw_shape(i)
 
 screen = Screen()
 screen.exitonclick()
