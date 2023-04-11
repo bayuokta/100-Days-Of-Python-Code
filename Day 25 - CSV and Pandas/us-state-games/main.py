@@ -28,9 +28,7 @@ while len(guest_state) < 50:
 
 
 # states_to_learn.csv
-for state in guest_state:
-    all_states.remove(state)
-
+all_states = [state for state in all_states if state not in guest_state]
 state_to_learn = pandas.DataFrame(all_states)
 state_to_learn.columns = ['state']
 state_to_learn.to_csv('states_to_learn.csv')
